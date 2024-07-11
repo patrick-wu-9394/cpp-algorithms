@@ -23,5 +23,16 @@ target_link_libraries(
     GTest::gtest_main
 )
 
+add_executable(
+    sorting_test
+    sorting_test.cc
+)
+
+target_link_libraries(
+    sorting_test
+    GTest::gtest_main
+)
+
 include(GoogleTest)
 gtest_discover_tests(reverse_test)
+gtest_discover_tests(sorting_test)
