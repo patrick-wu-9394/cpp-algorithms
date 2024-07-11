@@ -34,4 +34,24 @@ namespace algorithms {
         }
     }
 
+    template<typename T>
+    void selectionSort(std::vector<T>& v, bool ascending) {
+        for (size_t i = 0; i < v.size() - 1; i++) {
+            size_t swapIdx = i;
+            // After a full iteration of the inner loop, the ith element will
+            // be sorted, so we can start at i+1
+            for (size_t j = i + 1; j < v.size(); j++) {
+                // If we find an entry, past the ith index that is gt/lt,
+                // then we'll want to swap the ith entry with it
+                if ((ascending && v[j] < v[swapIdx]) || 
+                    (!ascending &&v[j] > v[swapIdx])) {
+                    swapIdx = j;
+                }
+            }
+            if (swapIdx != i) {
+                std::swap(v[swapIdx], v[i]);
+            } 
+        }
+    }
+
 }
