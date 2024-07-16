@@ -33,6 +33,19 @@ target_link_libraries(
     GTest::gtest_main
 )
 
+add_executable(
+    misc_test
+    misc_test.cc
+)
+
+target_link_libraries(
+    misc_test
+    GTest::gtest_main
+)
+
+
+
 include(GoogleTest)
 gtest_discover_tests(reverse_test)
 gtest_discover_tests(sorting_test)
+gtest_discover_tests(misc_test)

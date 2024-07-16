@@ -34,6 +34,7 @@ namespace algorithms {
         }
     }
 
+    /* https://www.geeksforgeeks.org/selection-sort-algorithm-2/ */
     template<typename T>
     void selectionSort(std::vector<T>& v, bool ascending) {
         for (size_t i = 0; i < v.size() - 1; i++) {
@@ -52,6 +53,20 @@ namespace algorithms {
                 std::swap(v[swapIdx], v[i]);
             } 
         }
+    }
+
+    unsigned int fibonacciSequence(unsigned int n) {
+        // 0, 1, for the first 2 sequences
+        if (n <= 1) return n;
+        unsigned int prev1 = 1;  // n-1
+        unsigned int prev2 = 0;  // n-2
+        unsigned int ret;
+        for (unsigned int i = 1; i < n; i++) {
+            ret = prev1 + prev2;
+            prev2 = prev1;
+            prev1 = ret;
+        }
+        return ret;
     }
 
 }
